@@ -1,5 +1,5 @@
 /*
-    ½¨Á¢Ò»¸ö¶ş²æËÑË÷Ê÷
+    å»ºç«‹ä¸€ä¸ªäºŒå‰æœç´¢æ ‘
 */
 
 #include <stdio.h>
@@ -15,7 +15,7 @@ typedef struct tree {
     Node* root;
 } Tree;
 
-// Ç°Ğò±éÀú
+// å‰åºéå†
 void preorder(Node* node)
 {
     if(node != NULL) {
@@ -24,7 +24,7 @@ void preorder(Node* node)
         preorder( node -> right);
     }
 }
-// ÖĞĞò±éÀú
+// ä¸­åºéå†
 void inorder(Node* node)
 {
     if(node != NULL) {
@@ -33,7 +33,7 @@ void inorder(Node* node)
         inorder(node -> right);
     }
 }
-// ºóĞò±éÀú
+// ååºéå†
 void postorder(Node* node)
 {
     if(node != NULL) {
@@ -43,10 +43,10 @@ void postorder(Node* node)
     }
 }
 
-// ¹¹½¨¶ş²æËÑË÷Ê÷
+// æ„å»ºäºŒå‰æœç´¢æ ‘
 void insert(Tree* tree, int value)
 {
-    // ³õÊ¼»¯½áµã
+    // åˆå§‹åŒ–ç»“ç‚¹
     Node* node = (Node *)malloc(sizeof(Node));
     node -> data  = value;
     node -> left  = NULL;
@@ -55,7 +55,7 @@ void insert(Tree* tree, int value)
     if( tree -> root == NULL) {
         tree -> root = node;
     } else {
-        // ½¨Á¢Ò»¸öÁÙÊ±±äÁ¿
+        // å»ºç«‹ä¸€ä¸ªä¸´æ—¶å˜é‡
         Node* temp = tree -> root;
         while( temp != NULL) {
             if( value < temp -> data) {
@@ -76,7 +76,7 @@ void insert(Tree* tree, int value)
         }
     }
 }
-// ÇóÊıµÄ¸ß¶È
+// æ±‚æ•°çš„é«˜åº¦
 int get_height(Node* node)
 {
     if(node == NULL) {
@@ -92,6 +92,7 @@ int get_height(Node* node)
     }
 }
 
+// æ±‚æ ‘ç»“ç‚¹çš„æœ€å¤§å€¼
 int get_maximum(Node* node)
 {
     if(node == NULL) {
@@ -116,14 +117,15 @@ int main()
     for(i=0; i<9; i++) {
         insert(&tree, a[i]);
     }
-    // ÇóÊ÷µÄ¸ß¶È
+    // æ±‚æ ‘çš„é«˜åº¦
     int h = get_height(tree.root);
     printf("The tree's height is %d\n", h);
 
-    // Çó×î´óÖµ
+    // æ±‚æœ€å¤§å€¼
     int max = get_maximum(tree.root);
     printf("The tree's maximum is %d\n", max);
-    // ±éÀú¶ş²æÊ÷
+    
+    // éå†äºŒå‰æ ‘
     preorder(tree.root);
     printf("\n");
     inorder(tree.root);
