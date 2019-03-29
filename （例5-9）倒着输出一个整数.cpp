@@ -17,11 +17,11 @@ int main(void) {
 	printf("Type in a integer:\n");
 	scanf("%d", &num);
 	
-	while(num != 0){
+	do{
 		temp = num % 10;
 		num /= 10;
 		printf("%d", temp); 
-	} 
+	} while(num != 0); 
 	printf("\n"); 
 	
 	return 0;
