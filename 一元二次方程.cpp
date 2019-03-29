@@ -42,9 +42,9 @@ int main(void) {
 	} 
 	else
     {
-		re = -b / (2.0 * a);
+		re = -b / (2.0 * a); // 实数部分 
 		deta = pow(b,2) - 4*a*c;
-		im = sqrt(fabs(deta)) / (2.0 * a);
+		im = sqrt(fabs(deta)) / (2.0 * a); // 虚数部分 
 		
 		if(deta >= 0.0) {
 			printf("Two roots: x1 = %f\tx2 = %f\n",re + im, re - im);
